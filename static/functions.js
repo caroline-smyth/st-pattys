@@ -36,11 +36,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const letterLines = [
         "hi owen",
         "happy st. patrick's day!",
-        "you're like a pot of gold, if gold was tautologies",
-        "so many tautologies all stuffed together in one person",
+        "you're like a pot of gold, if gold was wonderful thoughts and things to say",
+        "so many of them all stuffed together in one person",
         "i'm so lucky to know you!!!!",
-        "i'm lucky we were in 1004 together",
+        "i'm lucky we ended up at columbia",
+        "and lucky we were in 1004 together",
         "i'm lucky you like coronas and chess and riverdale",
+        "lucky to have another summer to look forward to",
         "i'm lucky to learn from and with you",
         "i'm lucky to make stuff with you",
         "make",
@@ -406,10 +408,19 @@ document.addEventListener('DOMContentLoaded', function() {
             // Update coin counter for celebration coins
             updateCoinCounter(celebrationCoins);
             
-            // Add pot of gold after a delay
-            setTimeout(() => {
-                createPotOfGold();
-            }, 1500);
+            // Create pot of gold immediately but keep it invisible
+            createPotOfGold();
+            
+            // Get the pot of gold element and add a longer, smoother transition
+            const potOfGold = document.querySelector('.pot-of-gold');
+            if (potOfGold) {
+                potOfGold.style.transition = 'opacity 1.2s ease, transform 1.2s ease';
+                
+                // Make it visible after a delay
+                setTimeout(() => {
+                    potOfGold.classList.add('active');
+                }, 1000);
+            }
         }, 100);
     });
     

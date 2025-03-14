@@ -215,6 +215,7 @@ body {
 .pot-of-gold.active {
   opacity: 1;
   transform: translateX(0);
+  animation: tremble 0.5s infinite alternate;
 }
 
 .pot-of-gold img {
@@ -222,6 +223,15 @@ body {
   height: 100%;
   object-fit: contain;
   animation: potGlow 2s infinite alternate;
+}
+
+/* Trembling animation for pot of gold */
+@keyframes tremble {
+  0% { transform: translateX(0) rotate(0deg); }
+  25% { transform: translateX(-2px) rotate(-1deg); }
+  50% { transform: translateX(0) rotate(0deg); }
+  75% { transform: translateX(2px) rotate(1deg); }
+  100% { transform: translateX(0) rotate(0deg); }
 }
 
 /* Heart styles */
